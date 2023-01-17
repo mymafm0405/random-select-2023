@@ -12,7 +12,7 @@ import { finalize } from 'rxjs/operators';
   styleUrls: ['./student-create.component.css']
 })
 export class StudentCreateComponent implements OnInit {
-  @ViewChild('studentAddForm', {static: false}) studentAddForm: NgForm;
+  @ViewChild('studentAddForm') studentAddForm: NgForm;
   selectedImage: null;
   addedSuccess = false;
   savingStatus: boolean;

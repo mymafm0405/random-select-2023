@@ -12,7 +12,7 @@ import { Group } from 'src/app/shared/group.model';
   styleUrls: ['./group-create.component.css']
 })
 export class GroupCreateComponent implements OnInit {
-  @ViewChild('createGroupForm', {static: false}) createGroupForm: NgForm;
+  @ViewChild('createGroupForm') createGroupForm: NgForm;
   selectedImage = null;
   savingStatus = false;
 
