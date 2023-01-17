@@ -107,7 +107,7 @@ export class StudentSelectedComponent implements OnInit, OnDestroy {
   photoRandom(groupIndex: number) {
     this.startPhotoRandom = setInterval(() => {
       if (groupIndex !== undefined) {
-        this.photoSrc = "/assets/images/students/" + groupIndex + "/group.gif";
+        this.photoSrc = "/assets/images/students/question-mark.png";
       }
     }, 100);
     this.flowerBg = "assets/images/" + groupIndex + ".png";

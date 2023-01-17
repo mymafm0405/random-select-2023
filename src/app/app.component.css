@@ -6,3 +6,25 @@
   background-image: url("../assets/images/traffic9.png");
   background-size: contain;
 }
+.over {
+  width: 1300px;
+  height: 600px;
+  background-color: blanchedalmond;
+  position: absolute;
+  top: 120px;
+  left: 300px;
+  z-index: 1;
+  border: 1px solid #333;
+  border-radius: 10px;
+  box-shadow: 10px 10px 10px;
+}
+.over img {
+  width: 100%;
+  height: 100%;
+}
+.over button {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 5px;
+}

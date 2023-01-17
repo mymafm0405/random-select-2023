@@ -11,6 +11,14 @@
   <div *ngIf="showCreateGroupForm" style="color: yellow; margin-top: 30px">
     <app-group-create></app-group-create>
   </div>
+  <div class="row" *ngIf="showBigQuestion">
+    <div class="col-xs-12">
+      <div class="over">
+        <button (click)="onCloseQuestion()" class="btn btn-danger"><span class="glyphicon glyphicon-remove"></span></button>
+        <img [src]="imageUrl" class="img-responsive" alt="">
+      </div>
+    </div>
+  </div>
   <div class="row">
     <div class="col-xs-12">
       <app-groups></app-groups>

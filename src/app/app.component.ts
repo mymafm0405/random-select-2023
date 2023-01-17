@@ -1,5 +1,7 @@
 import { GroupServiceService } from "./shared/group-service.service";
 import { Component, OnInit } from "@angular/core";
+import { StudentServiceService } from "./shared/student-service.service";
+import { Student } from "./shared/student.model";
 
 @Component({
   selector: "app-root",
@@ -13,9 +15,25 @@ export class AppComponent implements OnInit {
   editClicked: boolean;
   section1 = true;
   section2 = false;
-  constructor(private groupService: GroupServiceService) {}
+  showBigQuestion = false;
+  imageUrl = ''
+
+  constructor(
+    private groupService: GroupServiceService,
+    private studentService: StudentServiceService
+  ) {}
 
   ngOnInit() {
+    // The following code added only to make the big question image working
+    this.studentService.selectedStudentChanged.subscribe(
+      (updatedStudent: Student) => {
+        setTimeout(() => {
+          this.showBigQuestion = true;
+        }, 3000)
+        this.imageUrl = updatedStudent.imageUrl;
+        console.log(updatedStudent.imageUrl);
+      }
+    );
     //
     this.groupService.createGroupClicked.subscribe(
       (createGroupStatus: boolean) => {
@@ -45,5 +63,9 @@ export class AppComponent implements OnInit {
         this.section1 = false;
       }
     });
+  }
+
+  onCloseQuestion() {
+    this.showBigQuestion = false;
   }
 }
